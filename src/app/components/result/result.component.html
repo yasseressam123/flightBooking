@@ -1,0 +1,40 @@
+<div class="result">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="book-card">
+            <h4><span>{{countryFrom}}</span> TO <span>{{countryTo}}</span></h4>
+            <div>
+              <p>{{dateFrom}}</p>
+            </div>
+            <div>
+              <div>
+                <p>price: 2000</p>
+              </div>
+              <div>
+                <button class="btn btn-primary" (click)="handleBooking()">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="book-card">
+            <h4><span>{{countryTo}}</span> FROM <span>{{countryFrom}}</span></h4>
+            <div>
+              <p>{{dateTo}}</p>
+            </div>
+            <div>
+              <div>
+                <p>price: 2000</p>
+              </div>
+              <div>
+                <button class="btn btn-primary" (click)="handleBooking()">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

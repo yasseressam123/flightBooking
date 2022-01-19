@@ -1,0 +1,195 @@
+<div class="book">
+  <div class="container">
+    <div class="row justify-content-center">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="d-flex">
+          <div class="col-6">
+            <label for="">First Name</label>
+            <input
+              type="text"
+              pInputText
+              name="firstName"
+              [(ngModel)]="bookData.firstName"
+              #firstName="ngModel"
+              required
+            />
+            <p
+              *ngIf="
+                firstName.invalid && (firstName.dirty || firstName.touched)
+              "
+              class="alert alert-danger width-90"
+            >
+              this input required
+          </p>
+          </div>
+          <div class="col-6">
+            <label for="">Last Name</label>
+            <input
+              type="text"
+              pInputText
+              name="lastName"
+              [(ngModel)]="bookData.lastName"
+              #lastName="ngModel"
+              required
+            />
+            <p
+              *ngIf="
+                lastName.invalid && (lastName.dirty || lastName.touched)
+              "
+              class="alert alert-danger width-90"
+            >
+              this input required
+          </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="col-6">
+            <label for="">Date of Birth</label>
+            <p-calendar
+              name="birthDate"
+              [(ngModel)]="bookData.birthDate"
+              #birthDate="ngModel"
+              [required]="true"
+            ></p-calendar>
+            <p
+              *ngIf="
+                birthDate.invalid && (birthDate.dirty || birthDate.touched)
+              "
+              class="alert alert-danger width-90"
+            >
+              this input required
+          </p>
+          </div>
+          <div class="col-6">
+            <label for="">Phone Number</label>
+            <input
+              type="tel"
+              pInputText
+              name="phone"
+              [(ngModel)]="bookData.phone"
+              #phone="ngModel"
+              required
+            />
+            <p
+              *ngIf="
+                phone.invalid && (phone.dirty || phone.touched)
+              "
+              class="alert alert-danger width-90"
+            >
+              this input required
+          </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="">E-mail</label>
+            <input
+              class="width-100"
+              type="email"
+              pInputText
+              name="email"
+              [(ngModel)]="bookData.email"
+              #email="ngModel"
+              required
+            />
+            <p
+              *ngIf="
+                email.invalid && (email.dirty || email.touched)
+              "
+              class="alert alert-danger width-100"
+            >
+              this input required
+          </p>
+          </div>
+        </div>
+        <div>
+          <label for="">Address</label>
+          <div>
+            <input
+              class="width-100"
+              type="text"
+              pInputText
+              name="street"
+              [(ngModel)]="bookData.street"
+              #street="ngModel"
+            />
+            <p>Street Address</p>
+          </div>
+          <div class="d-flex">
+            <div class="col-6">
+              <input
+                type="text"
+                pInputText
+                name="city"
+                [(ngModel)]="bookData.city"
+                #city="ngModel"
+              />
+              <p>City</p>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                pInputText
+                name="state"
+                [(ngModel)]="bookData.state"
+                #state="ngModel"
+              />
+              <p>State / Province</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="col-6 mb-3">
+            <label for="">Departure Date</label>
+            <input
+              type="text"
+              pInputText
+              name="departure"
+              [(ngModel)]="bookData.departure"
+              #departure="ngModel"
+              readonly
+            />
+          </div>
+          <div class="col-6">
+            <label for="">Return Date</label>
+            <input
+              type="text"
+              pInputText
+              name="return"
+              [(ngModel)]="bookData.return"
+              #return="ngModel"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="col-6">
+            <label for="">Departing From</label>
+            <input
+              type="text"
+              pInputText
+              name="departingFrom"
+              [(ngModel)]="bookData.departingFrom"
+              #departingFrom="ngModel"
+              readonly
+            />
+          </div>
+          <div class="col-6">
+            <label for="">Destination</label>
+            <input
+              type="text"
+              pInputText
+              name="destination"
+              [(ngModel)]="bookData.destination"
+              #destination="ngModel"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="mt-3">
+          <button [disabled]="f.invalid" class="btn btn-primary" type="submit">Reserve Flight</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
